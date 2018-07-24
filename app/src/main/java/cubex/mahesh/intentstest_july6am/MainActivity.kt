@@ -1,9 +1,11 @@
 package cubex.mahesh.intentstest_july6am
 
+import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AlertDialog
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -40,7 +42,22 @@ class MainActivity : AppCompatActivity() {
 
         })
 
-
-
+        next.setOnClickListener {
+            if(et1.text.length>0) {
+                var i = Intent(this@MainActivity,
+                        NextActivity::class.java)
+                i.putExtra("person_name", et2.text.toString())
+                startActivity(i)
+            }else{
+                var dialog = AlertDialog.Builder(this@MainActivity)
+                dialog.setTitle("Message")
+                dialog.setMessage("Please Provide text in the name textbox..")
+                dialog.show()
+            }
+        }
     } // onCreate
+
+
+
+
 }  // MainActivity

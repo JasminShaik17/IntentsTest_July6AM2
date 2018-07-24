@@ -18,6 +18,13 @@
         android:id="@+id/dial"
         android:layout_gravity="center"/>
 
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/et2"
+        android:hint="Enter Name"/>
+
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
